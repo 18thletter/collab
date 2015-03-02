@@ -190,7 +190,6 @@ Template.clientPlayer.helpers({
 Template.hostPlayer.events({
   // use togglepause on this one (soundmanager2 library)
   "click .playpause, touchstart .playpause" : function(event) {
-    //event.preventDefault();
     //if (this.loaded === false) {
       //return;
     //}
@@ -206,13 +205,16 @@ Template.hostPlayer.events({
       //});
       //$(".fa-pause").switchClass("fa-pause", "fa-play");
     //}
+
+    // prevent default form submit
+    //return false
   },
   "touchend .playpause": function(event) {
     // click doubles as a touchend event, so prevent doubling up
-    event.preventDefault();
+    // prevent default form submit
+    return false
   },
   //"click .ff-next, touchstart .ff-next": function(event) {
-    ////event.preventDefault();
     ////if (this.loaded === false) {
       ////return;
     ////}
@@ -221,37 +223,46 @@ Template.hostPlayer.events({
     //OJPlayer.currentSound.destruct();
     //OJPlayer.nextSong(self._id, self.paused);
     //updateSeekBarDisplay(0);
+
+    // prevent default form submit
+    ////return false
   //},
   //"touchend .ff-next": function(event) {
-    //event.preventDefault();
+    // prevent default form submit
+    //return false
   //},
   "click .backward-fifteen, touchstart .backward-fifteen": function(event) {
-    //event.preventDefault();
     //if (this.loaded === false) {
       //return;
     //}
     // rewind 15 seconds
     OJPlayer.currentSound.setPosition(OJPlayer.currentSound.position - 15000);
+
+    // prevent default form submit
+    //return false
   },
   "touchend .backward-fifteen": function(event) {
-    event.preventDefault();
+    // prevent default form submit
+    return false
   },
   "click .forward-fifteen, touchstart .forward-fifteen": function(event) {
-    //event.preventDefault();
     //if (this.loaded === false) {
       //return;
     //}
     // skip ahead 15 seconds
     OJPlayer.currentSound.setPosition(OJPlayer.currentSound.position + 15000);
+
+    // prevent default form submit
+    //return false
   },
   "touchend .forward-fifteen": function(event) {
-    event.preventDefault();
+    // prevent default form submit
+    return false
   },
 });
 
 Template.clientPlayer.events({
   "click .playpause, touchstart .playpause": function(event) {
-    event.preventDefault();
     if (this.loaded === false) {
       return;
     }
@@ -266,6 +277,8 @@ Template.clientPlayer.events({
       });
       //$(".fa-pause").switchClass("fa-pause", "fa-play");
     }
+
+    // prevent default form submit
+    return false
   },
 });
-

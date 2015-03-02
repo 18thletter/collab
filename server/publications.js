@@ -5,6 +5,7 @@ Meteor.publish("playlist", function() {
 Meteor.publish("currentSong", function() {
   return CurrentSong.find();
 });
+Meteor.publish("chatUsers", Meteor.collectionHelpers.getChatUsers);
 
 // Streams
 Chat = new Meteor.Stream("chat");
