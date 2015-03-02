@@ -84,7 +84,6 @@ var getSearchResults = function(query) {
 
 Template.search.events({
   "submit .search form": function(event) {
-    event.preventDefault();
     var query = $(".search input[type=search]").val().trim();
     if (query) {
       $(".results-message").hide();
@@ -93,9 +92,11 @@ Template.search.events({
       $(".searching").show();
       getSearchResults(query);
     }
+
+    // prevent default form submit
+    return false
   },
   "click .add-to-playlist": function(event) {
-    event.preventDefault();
     OJPlayer.addSongToPlaylist(this);
     if (!Session.equals("selectedTab", "playlist")) {
       Session.set("missedPlaylist", Session.get("missedPlaylist") + 1);
@@ -103,6 +104,9 @@ Template.search.events({
     PlaylistTracker.emit("songAdded");
     $(event.currentTarget).parent().addClass("in-playlist");
     $(".added").fadeIn("fast").delay(1000).fadeOut("slow");
+
+    // prevent default form submit
+    return false
   }
 });
 

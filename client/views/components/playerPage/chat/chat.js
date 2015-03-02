@@ -39,7 +39,6 @@ Template.chatMessage.helpers({
 
 Template.chat.events({
   "submit .chat form": function(event) {
-    event.preventDefault();
 
     var message = $(".chat form input");
     // don't do anything if the message is empty
@@ -48,6 +47,8 @@ Template.chat.events({
       Chat.emit("chat", message.val());
       message.val("");
     }
+
+    // prevent default form submit
+    return false
   }
 });
-

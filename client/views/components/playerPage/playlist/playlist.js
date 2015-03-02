@@ -57,7 +57,6 @@ Template.playlist.helpers({
 
 Template.playlist.events({
   "click .upvote": function(event) {
-    event.preventDefault();
     var currentTarget = $(event.currentTarget);
     if (currentTarget.hasClass("vote-disabled")) {
       return;
@@ -68,9 +67,11 @@ Template.playlist.events({
       $inc: {upvotes: 1, voteTotal: 1}
     });
     $(event.currentTarget).addClass("vote-disabled");
+
+    // prevent default form submit
+    return false
   },
   "click .downvote": function(event) {
-    event.preventDefault();
     var currentTarget = $(event.currentTarget);
     if (currentTarget.hasClass("vote-disabled")) {
       return;
@@ -89,13 +90,18 @@ Template.playlist.events({
       $inc: {downvotes: 1, voteTotal: -1}
     });
     $(event.currentTarget).addClass("vote-disabled");
+
+    // prevent default form submit
+    return false
   },
   "click .remove-song": function(event) {
-    event.preventDefault();
     var currentTarget = $(event.currentTarget);
     if (currentTarget.hasClass("remove-disabled")) {
       return;
     }
     Playlist.remove(this._id);
+
+    // prevent default form submit
+    return false
   }
 });
