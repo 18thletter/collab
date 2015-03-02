@@ -3,6 +3,7 @@ var maxChats = 200;
 
 Chat = new Meteor.Stream("chat");
 ChatCollection = new Meteor.Collection(null);
+Meteor.subscribe("chatUsers");
 
 var addChatMessage = function(message, username) {
   ChatCollection.insert({
@@ -29,6 +30,9 @@ Template.chat.helpers({
       sort: [["time", "desc"], ["username", "asc"]]
     });
   },
+  chatUsers: function() {
+    return Meteor.collectionHelpers.getChatUsers();
+  }
 });
 
 Template.chatMessage.helpers({

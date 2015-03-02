@@ -11,7 +11,8 @@ Router.route('player', {
   waitOn: function() {
     return [
       Meteor.subscribe("currentSong"),
-      Meteor.subscribe("playlist")
+      Meteor.subscribe("playlist"),
+      Meteor.subscribe("chatUsers"),
     ];
   },
   onBeforeAction: function() {
