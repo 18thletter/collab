@@ -1,10 +1,12 @@
-Router.route('login', {
-  onBeforeAction: function() {
-    if (Meteor.userId()) {
-      this.redirect('player');
-    }
-  },
-  fastRender: true,
+Router.route('/', function() {
+  if (Meteor.user()) {
+    this.redirect('player');
+  } else {
+    this.redirect('login');
+  }
+});
+Router.route('login', function() {
+  this.render('login');
 });
 Router.route('player', {
   template: 'playerPage',
@@ -22,13 +24,3 @@ Router.route('player', {
   },
   fastRender: true,
 });
-Router.route('/', {
-  template: 'home',
-  onBeforeAction: function() {
-    if (!Meteor.userId()) {
-      this.redirect('login');
-    } else {
-      this.redirect('player');
-    }
-  }
-})
