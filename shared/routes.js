@@ -1,9 +1,5 @@
 Router.route('/', function() {
-  if (Meteor.user()) {
-    this.redirect('player');
-  } else {
-    this.redirect('login');
-  }
+  this.render('home');
 });
 Router.route('login', function() {
   this.render('login');
