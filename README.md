@@ -42,7 +42,7 @@ You can also chat with other logged in users on the Chat tab!
 
 ## Todo
 - Add Spotify API support (this will require Spotify Premium)
-- Add user list on chat page
+- ~~Add user list on chat page~~
 - Make it work for mobile. Phonegap
 - Add Velocity and some animations
 - Find other places to make performance boosts in the UI

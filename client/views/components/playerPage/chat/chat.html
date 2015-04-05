@@ -1,13 +1,25 @@
 <template name="chat">
   <div class="chat">
-    <form>
-      <input type="text" placeholder="Chat something!" />
-    </form>
-    <ul class="messages">
-      {{#each message}}
-        {{> chatMessage}}
-      {{/each}}
-    </ul>
+    <div class="conversation">
+      <form>
+        <input type="text" placeholder="Chat something!" />
+      </form>
+      <ul class="messages">
+        {{#each message}}
+          {{> chatMessage}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="user-list">
+      <ul class="users">
+        <li>
+          <span class="user-list-header">Users</span>
+        </li>
+        {{#each chatUsers}}
+          {{> chatUser}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -16,5 +28,11 @@
     <span class="chat-username">{{username}}</span>
     <span class="chat-time">{{formattedTime}}: </span>
     <span class="chat-message">{{message}}</span>
+  </li>
+</template>
+
+<template name="chatUser">
+  <li class="chat-user">
+    <span class="chat-username">{{username}}</span>
   </li>
 </template>

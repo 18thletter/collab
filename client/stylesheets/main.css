@@ -894,6 +894,27 @@ input[type="submit"] {
 .message .chat-time {
   color: #757575; }
 
+.chat .user-list-header {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #090909;
+}
+
+.chat .user-list {
+  position:absolute;
+  bottom:0;
+  right:0;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #708090;
+  padding: 4px;
+}
+
+.chat-user .chat-username {
+  font-weight: bold;
+  color: #0A245E;
+}
+
 .player {
   text-align: center;
   max-width: 68em;
