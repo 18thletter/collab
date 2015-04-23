@@ -1,0 +1,16 @@
+.home {
+  background-color: $base-accent-color;
+  min-width: 100%;
+  min-height: 100%;
+  color: $base-background-color;
+  text-align: center;
+  h1 {
+    font-family: $serif;
+  }
+  .big-words-section {
+    padding-top: 10rem;
+  }
+  h4 {
+    font-weight: normal;
+  }
+}

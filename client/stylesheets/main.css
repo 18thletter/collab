@@ -772,6 +772,19 @@ input[type="submit"] {
 .fa-times:before {
   content: "\f00d"; }
 
+.home {
+  background-color: #673ab7;
+  min-width: 100%;
+  min-height: 100%;
+  color: white;
+  text-align: center; }
+  .home h1 {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif; }
+  .home .big-words-section {
+    padding-top: 10rem; }
+  .home h4 {
+    font-weight: normal; }
+
 .login {
   position: fixed;
   width: 100%;
@@ -893,27 +906,6 @@ input[type="submit"] {
   color: #00bcd4; }
 .message .chat-time {
   color: #757575; }
-
-.chat .user-list-header {
-  font-weight: bold;
-  text-decoration: underline;
-  color: #090909;
-}
-
-.chat .user-list {
-  position:absolute;
-  bottom:0;
-  right:0;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #708090;
-  padding: 4px;
-}
-
-.chat-user .chat-username {
-  font-weight: bold;
-  color: #0A245E;
-}
 
 .player {
   text-align: center;
