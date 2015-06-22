@@ -1,19 +1,19 @@
-# OJ Box (Office Jukebox, or Orange Juice Box)
+# Collab
 
-## What is OJ Box?
-OJ Box is a poor man’s solution to having your own shareable music playlist.
+## What is Collab?
+Collab is a poor man’s solution to having your own shareable music playlist.
 It is targeted towards single room office or home settings. You can search for
 songs, add them to a playlist, and vote on the songs in the playlist. No more
 yelling across the room to have your buddy play you a song!
 
-Try out the demo at http://ojbox.rocks.
+Try out the demo at http://collab.audio
 
 ## Installation
-No more installation! I’m actually going to be hosting this at http://ojbox.rocks.
+No more installation! I’m actually going to be hosting this at http://collab.audio.
 The project isn’t fully complete yet, but I’m working on it.
 
 ## How does it Work?
-OJ Box is a web application that people can go to using a browser.
+Collab is a web application that people can go to using a browser.
 
 ### Log In
 Choose a user name and a box name. No password is required currently, although
@@ -28,7 +28,7 @@ on every client will get updated.
 
 ### Search
 The Search tab is for adding music to the playlist. The music comes from
-SoundCloud. OJ Box consumes the SoundCloud API. Thank you, SoundCloud!
+SoundCloud. Collab consumes the SoundCloud API. Thank you, SoundCloud!
 
 ### The Playlist
 Songs added to the playlist can be viewed on the Playlist tab. Anyone logged in
@@ -62,7 +62,6 @@ You can also chat with other logged in users on the Chat tab!
   adds, and votes
 - UI improvements on voting
 - Test out the playlist changing when other people do it. Seems buggy
-- Put speaker on the side of the orange juice box in the logo
 
 ## Possible future features
 - Color theme
